@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://k5uhblyqfyv0"]
+
+[ext_resource type="Script" uid="uid://8lsr6l0jvnq8" path="res://scenes/characters/enemies/enemy.gd" id="1_nwhyh"]
+[ext_resource type="PackedScene" uid="uid://rgsbsvsewwtb" path="res://scenes/components/health_component.tscn" id="2_blu3w"]
+[ext_resource type="PackedScene" uid="uid://bbvcmml68xhai" path="res://scenes/components/exp_bottle_drop_component.tscn" id="3_nwhyh"]
+[ext_resource type="PackedScene" uid="uid://li42iy0oxjyl" path="res://scenes/components/hurt_box_component.tscn" id="4_qj54i"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_nwhyh")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_blu3w")]
+
+[node name="ExpBottleDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_nwhyh")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_qj54i")]
+health_component = NodePath("../HealthComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+animation = &""
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
