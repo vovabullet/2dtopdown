@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqpvdle1vsqx7" path="res://scenes/manager/enemy_spawner.tscn" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://c1pe64lmgp7jv" path="res://scenes/characters/player/player.tscn" id="2_bovvr"]
 [ext_resource type="PackedScene" uid="uid://ba66cl368hq8i" path="res://scenes/manager/arena_time_manager.tscn" id="2_d4w6o"]
-[ext_resource type="PackedScene" uid="uid://boxen1um3106r" path="res://scenes/characters/enemies/orc/orc.tscn" id="3_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://wpbtdwhyxer" path="res://scenes/characters/enemies/orc/orc.tscn" id="3_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://cvql0xud8eb1m" path="res://scenes/manager/exp_manager.tscn" id="3_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://b038b714ty0e0" path="res://scenes/props/exp_bottle/exp_bottle.tscn" id="7_mbbpy"]
 
@@ -33,9 +33,6 @@ tile_set = ExtResource("1_377w7")
 [node name="Player" parent="." instance=ExtResource("2_bovvr")]
 position = Vector2(595, 60)
 
-[node name="Orc" parent="." instance=ExtResource("3_b2cq8")]
-position = Vector2(456, 133)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 position = Vector2(8, 16)
@@ -43,3 +40,5 @@ navigation_polygon = SubResource("NavigationPolygon_b2cq8")
 
 [node name="ExpBottle" parent="." instance=ExtResource("7_mbbpy")]
 position = Vector2(1039, 125)
+
+[node name="Orc" parent="." instance=ExtResource("3_b2cq8")]

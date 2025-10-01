@@ -30,7 +30,6 @@ func _ready() -> void:
 	navigation_agent.target_position = target.global_position if target else global_position
 
 func _physics_process(delta: float) -> void:
-	
 	match state:
 		IDLE: handle_idle_state()
 		CHASE: handle_chase_state()
